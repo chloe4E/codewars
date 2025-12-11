@@ -2,7 +2,7 @@ package katas;
 
 /**
  * [Kata Name]
- * Difficulty: [kyu level]
+ * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/...
  *
  * Description:
