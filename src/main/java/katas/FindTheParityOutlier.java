@@ -66,9 +66,8 @@ public class FindOutlier1 {
     }
 }
 
-import java.util.*;
 
-public class FindOutlier {
+public class FindOutlier2 {
     static int find(int[] integers) {
         // first check the first 3 int to determine odd or even
         String type1 = integers[0]%2 == 0? "even":"odd";
