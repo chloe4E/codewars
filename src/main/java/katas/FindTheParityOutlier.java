@@ -65,3 +65,31 @@ public class FindOutlier1 {
 
     }
 }
+
+import java.util.*;
+
+public class FindOutlier {
+    static int find(int[] integers) {
+        // first check the first 3 int to determine odd or even
+        String type1 = integers[0]%2 == 0? "even":"odd";
+        String type3 = integers[2]%2 == 0? "even":"odd";
+        String arrayType = integers[0]%2 == integers[1]%2 ? type1:type3;
+
+
+
+        // filter the array on the outlier type
+        for (int i:integers ){
+            if ((i%2==0 && arrayType == "even") || (i%2==1 && arrayType == "odd")|| (i%2==-1 && arrayType == "odd")){
+                continue;
+            } else{
+                //return the outlier int
+                return i;
+            }
+        }
+
+// default return
+        return 0;
+
+
+    }
+}
