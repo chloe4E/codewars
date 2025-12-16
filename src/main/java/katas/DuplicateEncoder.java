@@ -36,3 +36,23 @@ public class DuplicateEncoder {
     return result;
 }
   }
+
+// solution 2:
+import  java.util.Arrays;
+
+public class DuplicateEncoder {
+    static String encode(String word){
+
+        String[] lowerWord = word.toLowerCase().split("");
+
+        String result = "";
+        for (int i = 0; i < word.length(); i++){
+            if(Arrays.asList(lowerWord).lastIndexOf(lowerWord[i]) == Arrays.asList(lowerWord).indexOf(lowerWord[i])){
+                result += "(" ;
+            } else {
+                result += ")" ;
+            }
+        }
+        return result;
+    }
+}
