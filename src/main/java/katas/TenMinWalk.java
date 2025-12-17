@@ -33,3 +33,38 @@ public class TenMinWalk {
         return false;
     }
 }
+
+
+/**
+ solution 2
+
+ **/
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class TenMinWalk2 {
+    public static boolean isValid(char[] walk) {
+        // Insert brilliant code here
+        // check length (10)
+        if(walk.length != 10){
+            return false;
+        }
+
+        // create a map of direction
+        Map<String, Integer> directionMap = new HashMap();
+
+        for (char c:walk){
+            directionMap.computeIfAbsent(String.valueOf(c), (k) -> 1);
+            directionMap.computeIfPresent(String.valueOf(c), (k,v) ->  v+1);
+
+        }
+
+        // check return to starting point (number of s = n and e = w)
+        if ((directionMap.getOrDefault("n",0) == directionMap.getOrDefault("s",0)) &&
+                (directionMap.getOrDefault("e",0) == directionMap.getOrDefault("w",0))){
+            return true;
+        }
+        return false;
+    }
+}
