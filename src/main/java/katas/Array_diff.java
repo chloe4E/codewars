@@ -40,3 +40,38 @@ public class Kata {
     }
 
 }
+
+
+/**
+ Solution 2
+ */
+import java.util.Arrays;
+import java.util.List;
+import java.util.*;
+        import java.util.stream.Collectors;
+
+public class Kata {
+
+    public static int[] arrayDiff2(int[] a, int[] b) {
+        // Your code here
+        // to List
+        List<Integer> aList = Arrays.stream(a)
+                .mapToObj(Integer::valueOf)
+                .collect(Collectors.toList());
+
+        Set<Integer> bSet = Arrays.stream(b)
+                .boxed()
+                .collect(Collectors.toSet());
+
+
+        //remove b
+        int[] aResult = aList
+                .stream()
+                .filter( element -> !bSet.contains(element))
+                .mapToInt(Integer::intValue)
+                .toArray();
+
+        return aResult;
+    }
+
+}
