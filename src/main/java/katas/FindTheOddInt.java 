@@ -1,0 +1,38 @@
+package katas;
+
+/**
+ * [Find the odd int]
+ * Difficulty: [6 kyu]
+ * URL: https://www.codewars.com/kata/54da5a58ea159efa38000836/solutions/java
+ *
+ * Description:
+ * Given an array of integers, find the one that appears an odd number of times.
+
+   There will always be only one integer that appears an odd number of times.
+ */
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class FindOdd {
+    public static int findIt(int[] a) {
+
+      if(a.length == 1){
+        return a[0];
+      }
+
+      Set<Integer> aSet = Arrays.stream(a).boxed().collect(Collectors.toSet());
+      List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
+
+      for ( Integer i : aSet ){
+
+        if(aList.stream().filter(e -> e == i).count()%2 != 0){
+          return i;
+        }
+
+      }
+      return 0;
+    }
+}
