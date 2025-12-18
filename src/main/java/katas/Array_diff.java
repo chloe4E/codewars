@@ -56,7 +56,7 @@ public class Kata {
         // Your code here
         // to List
         List<Integer> aList = Arrays.stream(a)
-                .mapToObj(Integer::valueOf)
+                .boxed
                 .collect(Collectors.toList());
 
         Set<Integer> bSet = Arrays.stream(b)
