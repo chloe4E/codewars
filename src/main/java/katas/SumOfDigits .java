@@ -22,7 +22,7 @@ public class DRoot {
 				.map(e -> Integer.valueOf(e))
 				.reduce(0, (a, b) -> Integer.valueOf(a) + Integer.valueOf(b));
 
-		while (res > 10) {
+		while (res >= 10) {
 			res = Arrays
 					.asList(String.valueOf(res).split(""))
 					.stream()
