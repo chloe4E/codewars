@@ -11,20 +11,21 @@ package katas;
  * Example
  * Kata.createPhoneNumber(new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0}) // => returns "(123) 456-7890"
  */
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+
 public class Kata {
 	public static String createPhoneNumber(int[] numbers) {
-		// Your code here!
-		return "(" + String.valueOf(numbers[0])
-				+ String.valueOf(numbers[1])
-				+ String.valueOf(numbers[2])
-				+ ") "
-				+ String.valueOf(numbers[3])
-				+ String.valueOf(numbers[4])
-				+ String.valueOf(numbers[5])
-				+ "-"
-				+ String.valueOf(numbers[6])
-				+ String.valueOf(numbers[7])
-				+ String.valueOf(numbers[8])
-				+ String.valueOf(numbers[9]);
+		String numbersAsString = Arrays.stream(numbers).boxed().map(e -> String.valueOf(e)).collect(Collectors.joining());
+
+		StringBuilder sb = new StringBuilder(numbersAsString);
+
+		//proceed to modifications:
+		sb.insert(0, "(");
+		sb.insert(4, ") ");
+		sb.insert(9, "-");
+		return sb.toString();
 	}
 }
