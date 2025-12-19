@@ -19,28 +19,20 @@ public class EnoughIsEnough {
 	public static int[] deleteNth(int[] elements, int maxOccurrences) {
 		//Create a stream and a map to keep count
 		List<Integer> elementsList = Arrays.stream(elements).boxed().collect(Collectors.toList());
-		Map<Integer, Integer> elementsMap = Arrays.
-				stream(elements).
-				boxed().
-				collect(Collectors.toMap(e -> e, e -> 0, (existing, replacement) -> existing));
-
+		Map<Integer, Integer> elementsMap = Arrays.stream(elements).boxed().collect(Collectors.toMap(e -> e, e -> 0, (existing, replacement) -> existing));
+		List<Integer> returnList = new ArrayList();
 		// filter the stream
 		for (Integer element : elementsList) {
-			System.out.println("start loop");
-			System.out.println(String.valueOf(element));
-			System.out.println(String.valueOf(elementsList));
-			System.out.println("############");
 			Integer current = elementsMap.get(element);
 			elementsMap.put(element, current + 1);
 			if (current >= maxOccurrences) {
-				elementsList.remove(element);
-				System.out.println("loop output");
-				System.out.println(String.valueOf(elementsList));
+				continue;
+			} else {
+				returnList.add(element);
 			}
 		}
 
-
-		return elementsList.stream().mapToInt(Integer::intValue).toArray();
+		return returnList.stream().mapToInt(Integer::intValue).toArray();
 	}
 
 }
