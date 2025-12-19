@@ -14,19 +14,19 @@ import java.util.Collections;
 
 public class Solution {
 
-  public int solution(int number) {
-    //TODO: Code stuff here
-    List<Integer> multiples = new ArrayList<Integer>();
-    
-    for (int i = 1; i <number; i++){
-      if(i%3 == 0 || i %5 ==0){
-        System.out.println(i);
-        multiples.add(i);
-      }
-    }
-    
-    int result = multiples.stream().reduce(0, (a,b) -> a+b);
-    System.out.println(result);
-    return result;
-  }
+	public int solution(int number) {
+		//TODO: Code stuff here
+		List<Integer> multiples = new ArrayList<Integer>();
+
+		for (int i = 1; i < number; i++) {
+			if (i % 3 == 0 || i % 5 == 0) {
+				System.out.println(i);
+				multiples.add(i);
+			}
+		}
+
+		int result = multiples.stream().reduce(0, (a, b) -> a + b);
+		System.out.println(result);
+		return result;
+	}
 }

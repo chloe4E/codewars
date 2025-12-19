@@ -56,7 +56,7 @@ public class TenMinWalk2 {
 
         for (char c:walk){
             directionMap.computeIfAbsent(String.valueOf(c), (k) -> 1);
-            directionMap.computeIfPresent(String.valueOf(c), (k,v) ->  v+1);
+            directionMap.computeIfPresent(String.valueOf(c), (k, v) -> v + 1);
 
         }
 
