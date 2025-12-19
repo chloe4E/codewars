@@ -53,7 +53,7 @@ public class Kata {
 	public static int[] arrayDiff2(int[] a, int[] b) {
 		// Your code here
 		// to List
-		List<Integer> aList = Arrays.stream(a).boxed.collect(Collectors.toList());
+		List<Integer> aList = Arrays.stream(a).boxed().collect(Collectors.toList());
 
 		Set<Integer> bSet = Arrays.stream(b).boxed().collect(Collectors.toSet());
 
