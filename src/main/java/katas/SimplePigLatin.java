@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 public class PigLatin {
 	public static String pigIt(String str) {
 		// Write code here
-		String list = Arrays.asList(str.split(" ")).stream().map(s -> new StringBuilder(s).insert(s.length(), s.substring(0, 1))).map(s -> new StringBuilder(s).delete(0, 1)).map(s -> new StringBuilder(s).append("ay")).collect(Collectors.joining(" "));
+		String list = Arrays.asList(str.split(" ")).stream().map(s -> new StringBuilder(s).insert(s.length(), s.substring(0, 1))).map(s -> new StringBuilder(s).delete(0, 1)).map(s -> new StringBuilder(s).append("ay")).map(s -> (int) s.toString().toLowerCase().substring(0, 1).toCharArray()[0] < 97 ? s.substring(0, 1) : s).collect(Collectors.joining(" "));
 
 		System.out.println(String.valueOf(list));
 		return list;
