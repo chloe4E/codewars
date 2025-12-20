@@ -27,9 +27,6 @@ public class HumanReadableTime {
 
 		int secRemain = remain % 60;
 
-		String h = Integer.toString(hours).length() == 2 ? Integer.toString(hours) : "0" + Integer.toString(hours);
-		String m = Integer.toString(minutes).length() == 2 ? Integer.toString(minutes) : "0" + Integer.toString(minutes);
-		String s = Integer.toString(secRemain).length() == 2 ? Integer.toString(secRemain) : "0" + Integer.toString(secRemain);
-		return h + ":" + m + ":" + s;
+		return String.format("%02d:%02d:%02d", hours, minutes, secRemain);
 	}
 }
