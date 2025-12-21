@@ -16,13 +16,27 @@ package katas;
  * "The_Stealth-Warrior" gets converted to "TheStealthWarrior"
  */
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.lang.StringBuilder;
 
 class Solution {
 
 	static String toCamelCase(String s) {
-		String result = Arrays.asList(s.split("_|-")).stream().map(w -> w.substring(0, 1).toUpperCase() + w.substring(1)).collect(Collectors.joining(""));
-		return result.substring(0, 1).toLowerCase() + result.substring(1);
+
+		StringBuilder sb = new StringBuilder();
+		boolean capitalizeNext = false;
+
+		for (char c : s.toCharArray()) {
+			if (c == '_' || c == '-') {
+				capitalizeNext = true;
+			} else {
+				if (capitalizeNext) {
+					sb.append(Character.toUpperCase(c));
+					capitalizeNext = false;
+				} else {
+					sb.append(c);
+				}
+			}
+		}
+		return sb.toString();
 	}
 }
