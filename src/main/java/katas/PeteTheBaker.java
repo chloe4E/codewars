@@ -20,22 +20,6 @@ import java.util.Map;
 
 public class PeteBaker {
 	public static int cakes(Map<String, Integer> recipe, Map<String, Integer> available) {
-		// TODO: Insert Code Here
-
-		int min = Integer.MAX_VALUE;
-		// itereate through the map of recipe and check how many we have in the ressource map
-		for (var entry : recipe.entrySet()) {
-			Integer recipeIngredient = recipe.getOrDefault(entry.getKey(), 0);
-			Integer availableIngredient = available.getOrDefault(entry.getKey(), 0);
-			if (availableIngredient == 0) {
-				return 0;
-			}
-			int bakeable = availableIngredient / recipeIngredient;
-			if (bakeable < min) {
-				min = bakeable;
-			}
-
-		}
-		return min;
+		return recipe.entrySet().stream().mapToInt(e -> available.getOrDefault(e.getKey(), 0) / e.getValue()).min().orElse(0);
 	}
 }
