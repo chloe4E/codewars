@@ -17,22 +17,19 @@ import java.util.stream.Collectors;
 
 public class Kata {
 	public static String rot13(String str) {
-
-		String alphabet = "abcdefghijklmnopqrstuvwxyz";
-		List<String> alphabetList = Arrays.asList(alphabet.split("")).stream().collect(Collectors.toList());
+		// Your code goes here.
+		// check is letter use string builder
 		StringBuilder sb = new StringBuilder();
 
 		for (char c : str.toCharArray()) {
 			if (!Character.isLetter(c)) {
 				sb.append(c);
 			} else {
-				boolean isCapitalLetter = Character.isUpperCase(c);
-				int initialIndex = alphabetList.indexOf(String.valueOf(c).toLowerCase());
-				int rotIndex = ((initialIndex + 13)) % 26;
-
-				String character = isCapitalLetter ? alphabetList.get(rotIndex).toUpperCase() : alphabetList.get(rotIndex);
-
-				sb.append(character);
+				char base = Character.isUpperCase(c) ? 'A' : 'a';
+				int originalPos = c - base;
+				int rotIndex = (((originalPos + 13)) % 26) + base;
+				char shifted = (char) rotIndex;
+				sb.append(shifted);
 			}
 		}
 		return sb.toString();
