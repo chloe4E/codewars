@@ -1,4 +1,5 @@
-package katas;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * [What's a Perfect Power anyway?]
@@ -22,22 +23,40 @@ package katas;
  */
 public class PerfectPower {
 	public static int[] isPerfectPower(int n) {
-		double m = 1;
-		double k = 1;
+		double m = 2;
+		double k = 2;
 
 		while (Math.pow(m, k) <= n) {
 			while (Math.pow(m, k) <= n) {
 				if (Math.pow(m, k) == n) {
+					System.out.println("Found: m=" + m + ", k=" + k + " for n=" + n);
 					return new int[]{(int) m, (int) k};
 				}
+				System.out.println("Trying: m=" + m + ", k=" + k + " => " + Math.pow(m, k));
 				k += 1;
+
 			}
+			System.out.println("resetting k");
+			k = 2;
+
 			if (Math.pow(m, k) == n) {
 				return new int[]{(int) m, (int) k};
 			}
+			System.out.println("incrementing m");
 			m += 1;
+
 		}
 
-		return new int[]{};
+		return null;
+	}
+
+	public static void main(String[] args) {
+//			int[] pp = {51096280};//, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196, 216, 225, 243, 256, 289, 324, 343, 361, 400, 441, 484};
+//			for (int i: pp) assertNotNull(PerfectPower.isPerfectPower(i), i+" is a perfect power");
+
+		// assertNull(PerfectPower.isPerfectPower(0),"0 is not a perfect number");
+
+		assertNull(PerfectPower.isPerfectPower(51096280), "51096280 is not a perfect number");
+
 	}
 }
