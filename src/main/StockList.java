@@ -39,6 +39,10 @@ import java.util.stream.Collectors;
 public class StockList {
 
 	public static String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
+
+		if (lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
+			return "";
+		}
 		// create a hashmap with the categories
 		Map<String, Integer> myMap = new HashMap();
 		for (String letter : lstOf1stLetter) {
