@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Detect Pangram]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/545cedaa9943f7fe7b000048/train/java

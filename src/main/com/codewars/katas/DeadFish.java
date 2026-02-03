@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Make the Deadfish Swim]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/51e0007c1f9378fa810002a9/train/java

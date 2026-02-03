@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Find the unique number]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/java
@@ -12,8 +12,6 @@
  * <p>
  * The tests contain some very huge arrays, so think about performance.
  */
-
-import java.util.*;
 
 public class FindUnique {
 

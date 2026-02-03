@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Break camelCase]
  * Difficulty: [6 kyu]

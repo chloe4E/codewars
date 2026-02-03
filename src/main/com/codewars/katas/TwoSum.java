@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Two Sum]
  * Difficulty: [6 kyu]

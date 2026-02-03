@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Bouncing Balls]
  * Difficulty: [6 kyu]

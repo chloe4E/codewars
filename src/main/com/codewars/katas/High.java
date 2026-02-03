@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Highest Scoring Word]
  * Difficulty: [6 kyu]

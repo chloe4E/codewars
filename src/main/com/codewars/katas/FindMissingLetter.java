@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Kata Name]
  * Difficulty: [6 kyu]

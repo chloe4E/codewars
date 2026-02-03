@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Which are in?]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/550554fd08b86f84fe000a58/train/java

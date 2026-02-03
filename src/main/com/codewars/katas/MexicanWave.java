@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Mexican Wave]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/58f5c63f1e26ecda7e000029/solutions/java
@@ -23,7 +23,6 @@
  */
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -43,12 +42,6 @@ public class MexicanWave {
 			}
 		}
 		return result.toArray(String[]::new);
-	}
-
-	public static void main(String[] args) {
-		String[] result = new String[]{"Two words", "tWo words", "twO words", "two Words", "two wOrds", "two woRds", "two worDs", "two wordS"};
-		assertArrayEquals(result, MexicanWave.wave("two words"), "it should return '" + Arrays.toString(result) + "'");
-
 	}
 
 }

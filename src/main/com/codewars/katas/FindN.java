@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Build a pile of Cubes]
  * Difficulty: [6 kyu]

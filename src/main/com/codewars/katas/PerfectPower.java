@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
@@ -52,9 +54,9 @@ public class PerfectPower {
 
 	public static void main(String[] args) {
 //			int[] pp = {51096280};//, 8, 9, 16, 25, 27, 32, 36, 49, 64, 81, 100, 121, 125, 128, 144, 169, 196, 216, 225, 243, 256, 289, 324, 343, 361, 400, 441, 484};
-//			for (int i: pp) assertNotNull(PerfectPower.isPerfectPower(i), i+" is a perfect power");
+//			for (int i: pp) assertNotNull(com.codewars.katas.PerfectPower.isPerfectPower(i), i+" is a perfect power");
 
-		// assertNull(PerfectPower.isPerfectPower(0),"0 is not a perfect number");
+		// assertNull(com.codewars.katas.PerfectPower.isPerfectPower(0),"0 is not a perfect number");
 
 		assertNull(PerfectPower.isPerfectPower(51096280), "51096280 is not a perfect number");
 

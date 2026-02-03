@@ -1,4 +1,4 @@
-/**
+package com.codewars.katas; /**
  * [Are they the same?]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/550498447451fbbd7600041c/java

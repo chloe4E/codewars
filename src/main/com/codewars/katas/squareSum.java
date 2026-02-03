@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Square(n) Sum]
  * Difficulty: [8 kyu]

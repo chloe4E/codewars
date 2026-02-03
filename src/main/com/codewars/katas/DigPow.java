@@ -1,3 +1,5 @@
+package com.codewars.katas;
+
 /**
  * [Playing with digits]
  * Difficulty: [6 kyu]
