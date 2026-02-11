@@ -1,27 +1,29 @@
 package com.codewars.katas;
 
-/**
+/*
  * [Binary to Text (ASCII) Conversio]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/5583d268479559400d000064/train/java
  * <p>
  * Description:
  * Write a function that takes in a binary string and returns the equivalent decoded text (the text is ASCII encoded).
- *
+ * <p>
  * Each 8 bits on the binary string represent 1 character on the ASCII table.
- *
+ * <p>
  * The input string will always be a valid binary string.
- *
+ * <p>
  * Characters can be in the range from "00000000" to "11111111" (inclusive)
- *
+ * <p>
  * Note: In the case of an empty binary string your function should return an empty string.
  */
-import java.util.List;
+
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class BinaryToText {
 	public static String binaryToText(String binary) {
-		if (binary == "") {
+		if (Objects.equals(binary, "")) {
 			return "";
 		}
 
@@ -34,28 +36,24 @@ public class BinaryToText {
 		StringBuilder sb = new StringBuilder();
 		for (String binaryString : binaryStringList) {
 			// 0100100, first digit power of 2^1 + second digit to the power of 2^2 + 3rd digit to the power of 2^4 etc.
-			int sum = 0;
-			int[] pow = {1, 2, 4, 8, 16, 32, 64, 128};
-			int powIndex = 7;
+			int asciiCode = 0;
+			int power = 7;
 			for (char c : binaryString.toCharArray()) {
-				System.out.printf("sum: %d, powIndex: %d \n", sum, powIndex);
+				System.out.printf("asciiCode: %d, power: %d \n", asciiCode, power);
 				int val = c - 48;
 				//  d* 2^ i
-				//sum= sum + val * (int) Math.pow(2,pow[powIndex]);
-				sum = sum + val * pow[powIndex];
-				System.out.printf("sum: %d, val: %d \n", sum, val);
-				powIndex = powIndex - 1;
+				asciiCode = asciiCode + val * (int) Math.pow(2, power);
+				System.out.printf("asciiCode: %d, val: %d \n", asciiCode, val);
+				power = power - 1;
 			}
 
 			// convert to ascii and push to a StringBuilder
-			char ch = (char) sum;
-			System.out.printf("sum: %d, ch: %s", sum, ch);
+			char ch = (char) asciiCode;
+			System.out.printf("asciiCode: %d, ch: %s", asciiCode, ch);
 			sb.append(ch);
 
 		}
 
-		// return as a string
 		return sb.toString();
 	}
-
 }
