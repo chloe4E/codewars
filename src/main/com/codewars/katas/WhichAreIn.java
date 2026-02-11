@@ -14,13 +14,15 @@ package com.codewars.katas; /**
  * returns ["arp", "live", "strong"]
  */
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class WhichAreIn {
 
 	public static String[] inArray(String[] array1, String[] array2) {
-		List<String> myList = new ArrayList();
+		List<String> myList = new ArrayList<>();
 		for (int i = 0; i < array1.length; i++) {
 			final int i2 = i;
 			boolean contains = Arrays.stream(array2).anyMatch(x -> x.contains(array1[i2]));
@@ -30,7 +32,6 @@ public class WhichAreIn {
 			}
 		}
 		Collections.sort(myList);
-		String[] myArr = myList.toArray(new String[0]);
-		return myArr;
+		return myList.toArray(new String[0]);
 	}
 }

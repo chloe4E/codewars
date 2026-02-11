@@ -24,7 +24,7 @@ public class TwoSum {
 
 			for (int j = i + 1; j < numbers.length; j++) {
 
-				System.out.println(String.valueOf(i) + " " + String.valueOf(j));
+				System.out.println(i + " " + j);
 
 				if (numbers[i] + numbers[j] == target) {
 					return new int[]{i, j};

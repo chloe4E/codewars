@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class DeadFish {
 	public static int[] parse(String data) {
 		// return new int[0]; // Implement me! :)
-		List<Integer> myList = new ArrayList();
+		List<Integer> myList = new ArrayList<>();
 		int val = 0;
 
 		for (char c : data.toCharArray()) {

@@ -21,7 +21,6 @@ import java.util.*;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 class RevRot {
 
@@ -32,7 +31,7 @@ class RevRot {
 		}
 
 		// split string into chunk of size sz
-		List<String> stringList = new ArrayList();
+		List<String> stringList = new ArrayList<>();
 
 		for (int i = 0; i <= strng.length(); i = i + sz) {
 			if (i + sz > strng.length()) {
@@ -42,9 +41,8 @@ class RevRot {
 		}
 
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < stringList.size(); i++) {
+		for (String s : stringList) {
 			// If the sum of a chunk's digits is divisible by 2, reverse that chunk
-			String s = stringList.get(i);
 			int sum = String.valueOf(s)
 					.chars()
 					.map(Character::getNumericValue)

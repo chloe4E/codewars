@@ -23,7 +23,7 @@ public class CamelCase {
 			}
 			sb.append(input.charAt(i));
 		}
-		System.out.println(sb.toString());
+		System.out.println(sb);
 		return sb.toString();
 	}
 }

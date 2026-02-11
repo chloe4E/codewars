@@ -27,10 +27,10 @@ public class FindUnique {
 			return arr[1];
 		}
 
-		for (int i = 0; i < arr.length; i++) {
+		for (double v : arr) {
 
-			if (arr[i] != rep) {
-				return arr[i];
+			if (v != rep) {
+				return v;
 			}
 		}
 		return arr[0];

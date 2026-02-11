@@ -35,8 +35,8 @@ public class Tribonacci {
 		List<Double> myList = Arrays.stream(s).boxed().collect(Collectors.toList());
 
 		for (int i = 3; i < n; i++) {
-			Integer num = myList.subList(i - 3, i).stream().mapToInt(Double::intValue).sum();
-			myList.add(i, Double.valueOf(num));
+			int num = myList.subList(i - 3, i).stream().mapToInt(Double::intValue).sum();
+			myList.add(i, (double) num);
 			System.out.println(String.valueOf(myList));
 		}
 

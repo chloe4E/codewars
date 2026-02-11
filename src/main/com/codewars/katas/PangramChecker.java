@@ -16,7 +16,7 @@ public class PangramChecker {
 	public boolean check(String sentence) {
 		sentence = sentence.toLowerCase();
 		// create a set with all alphabet letter
-		Set<String> mySet = new HashSet();
+		Set<String> mySet = new HashSet<>();
 		for (char s : "abcdefghijklmnoparstuvwxyz".toCharArray()) {
 			mySet.add(String.valueOf(s));
 		}
@@ -25,7 +25,7 @@ public class PangramChecker {
 			mySet.remove(String.valueOf(letter));
 		}
 		// check if set size is 0, return true else return false
-		if (mySet.size() == 0) {
+		if (mySet.isEmpty()) {
 			return true;
 		}
 		return false;

@@ -69,8 +69,8 @@ public class DigPow {
 
 		int[] myArr = String.valueOf(n).chars().map(c -> c - '0').toArray();
 
-		for (int i = 0; i < myArr.length; i++) {
-			total = total + (long) Math.pow(myArr[i], p);
+		for (int j : myArr) {
+			total = total + (long) Math.pow(j, p);
 			p++;
 		}
 

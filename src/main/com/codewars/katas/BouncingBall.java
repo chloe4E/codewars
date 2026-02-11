@@ -37,7 +37,7 @@ public class BouncingBall {
 		// validate inputs:
 		System.out.printf("h: %s, bounce: %s, window: %s \n", String.valueOf(h), String.valueOf(bounce), String.valueOf(window));
 		if (h < 0 || bounce >= 1 || bounce <= 0 || window >= h) {
-			System.out.printf("One condition is failing");
+			System.out.print("One condition is failing");
 			return -1;
 		}
 

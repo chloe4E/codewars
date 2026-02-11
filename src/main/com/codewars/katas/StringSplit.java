@@ -20,7 +20,7 @@ import java.util.*;
 
 public class StringSplit {
 	public static String[] solution(String s) {
-		List<String> list = new ArrayList();
+		List<String> list = new ArrayList<>();
 
 		for (int i = 0; i < s.length(); i++) {
 			int end = i + 2;
@@ -36,7 +36,7 @@ public class StringSplit {
 			i = i + 1;
 		}
 		String[] arr = list.toArray(new String[0]);
-		System.out.print(String.valueOf(arr));
+		System.out.print(Arrays.toString(arr));
 		return arr;
 	}
 

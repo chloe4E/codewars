@@ -44,7 +44,7 @@ public class StockList {
 			return "";
 		}
 		// create a hashmap with the categories
-		Map<String, Integer> myMap = new HashMap();
+		Map<String, Integer> myMap = new HashMap<>();
 		for (String letter : lstOf1stLetter) {
 			myMap.put(letter, 0);
 		}
