@@ -42,21 +42,14 @@ import java.util.List;
  */
 class ResistorColor {
 
-	private  String[] colors;
-
-//	public ResistorColor() {
-//	}
-
 	int colorCode(String color) {
-		// throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-		String[] colors = {"black","brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+		String[] colors = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
 		List<String> colorsArrayList = new ArrayList<>(List.of(colors));
 		return  colorsArrayList.indexOf(color);
 	}
 
 	String[] colors() {
-		// throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-		String[] colors = {"black","brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+		String[] colors = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
 		return colors;
 	}
 }
