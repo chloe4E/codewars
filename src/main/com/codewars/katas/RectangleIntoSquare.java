@@ -9,31 +9,30 @@ package com.codewars.katas;
  * [Brief description]
  */
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class RectangleIntoSquare {
 
 	public static List<Integer> sqInRect(int lng, int wdth) {
 		// your code
-
-		if(lng == wdth){
+		if (lng == wdth) {
 			return null;
 		}
 
 		List<Integer> list = new ArrayList<>();
-		int remainingArea = lng * wdth;
 
-
-		while (lng != 2*wdth) {
+		while (lng != wdth) {
+			int tempLng = Math.max(lng, wdth);
+			int tempWdth = Math.min(lng, wdth);
+			lng = tempLng;
+			wdth = tempWdth;
 			list.add(wdth);
-			remainingArea = remainingArea - (wdth*wdth);
 			int oldwdth = wdth;
-			wdth = lng -wdth;
+			wdth = lng - wdth;
 			lng = oldwdth;
 		}
 
-		list.add(wdth);
 		list.add(wdth);
 		return list;
 
