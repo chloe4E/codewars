@@ -7,25 +7,25 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Meeting kata - formats and sorts attendee names.
+ */
 class Meeting {
 
-	public static String meeting(String s) {
-		String[] arr = s.split(";");
-		// StringBuilder sb = new StringBuilder();
-		List<String> list = new ArrayList<>();
+  /** Formats a semicolon-separated list of names as sorted (LAST, FIRST) pairs. */
+  public static String meeting(String s) {
+    String[] arr = s.split(";");
+    List<String> list = new ArrayList<>();
 
-		for (String name : arr) {
-			StringBuilder formattedName = new StringBuilder(name.toUpperCase());
-			String lastName = formattedName.substring(formattedName.lastIndexOf(":") + 1);
-			String firstName = formattedName.substring(0, formattedName.lastIndexOf(":"));
-			// sb.append("("+lastName+", "+firstName+")");
-			list.add("(" + lastName + ", " + firstName + ")");
-			Collections.sort(list);
-
-		}
-		// return sb.toString();
-		return list.stream()
-				.map(String::valueOf)
-				.collect(Collectors.joining());
-	}
+    for (String name : arr) {
+      StringBuilder formattedName = new StringBuilder(name.toUpperCase());
+      String lastName = formattedName.substring(formattedName.lastIndexOf(":") + 1);
+      String firstName = formattedName.substring(0, formattedName.lastIndexOf(":"));
+      list.add("(" + lastName + ", " + firstName + ")");
+      Collections.sort(list);
+    }
+    return list.stream()
+        .map(String::valueOf)
+        .collect(Collectors.joining());
+  }
 }

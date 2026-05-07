@@ -4,81 +4,26 @@ package com.codewars.katas;
  * [Playing with digits]
  * Difficulty: [6 kyu]
  * URL: https://www.codewars.com/kata/5552101f47fc5178b1000050/train/java
- * <p>
- * Description:
- * Some numbers have funny properties. For example:
- * <p>
- * 89 --> 8¹ + 9² = 89 * 1
- * 695 --> 6² + 9³ + 5⁴= 1390 = 695 * 2
- * 46288 --> 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688 = 46288 * 51
- * Given two positive integers n and p, we want to find a positive integer k, if it exists, such that the sum of the digits of n raised to consecutive powers starting from p is equal to k * n.
- * <p>
- * In other words, writing the consecutive digits of n as a, b, c, d ..., is there an integer k such that :
- * <p>
- * (
- * a
- * p
- * +
- * b
- * p
- * +
- * 1
- * +
- * c
- * p
- * +
- * 2
- * +
- * d
- * p
- * +
- * 3
- * +
- * .
- * .
- * .
- * )
- * =
- * n
- * ∗
- * k
- * (a
- * p
- * +b
- * p+1
- * +c
- * p+2
- * +d
- * p+3
- * +...)=n∗k
- * If it is the case we will return k, if not return -1.
- * <p>
- * Note: n and p will always be strictly positive integers.
- * <p>
- * Examples:
- * n = 89; p = 1 ---> 1 since 8¹ + 9² = 89 = 89 * 1
- * <p>
- * n = 92; p = 1 ---> -1 since there is no k such that 9¹ + 2² equals 92 * k
- * <p>
- * n = 695; p = 2 ---> 2 since 6² + 9³ + 5⁴= 1390 = 695 * 2
+ *
+ * <p>Description: Given n and p, find k such that the sum of digits of n raised to consecutive
+ * powers starting from p equals k * n. Return -1 if no such k exists.
  */
 public class DigPow {
-	public static long digPow(int n, int p) {
-		// your code
-		long total = 0;
 
-		int[] myArr = String.valueOf(n).chars().map(c -> c - '0').toArray();
+  /** Returns k if sum of digits of n raised to consecutive powers starting at p equals k*n. */
+  public static long digPow(int n, int p) {
+    long total = 0;
 
-		for (int j : myArr) {
-			total = total + (long) Math.pow(j, p);
-			p++;
-		}
+    int[] myArr = String.valueOf(n).chars().map(c -> c - '0').toArray();
 
-		System.out.println(total);
+    for (int j : myArr) {
+      total = total + (long) Math.pow(j, p);
+      p++;
+    }
 
-		if (total % n == 0) {
-			return total / n;
-		}
-		return -1;
-	}
+    if (total % n == 0) {
+      return total / n;
+    }
+    return -1;
+  }
 }
