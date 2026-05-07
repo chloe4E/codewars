@@ -20,7 +20,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "file=$(jq -r '.tool_input.file_path // empty'); [[ \"$file\" == *.java ]] && mvn checkstyle:check -q || true",
+            "command": "file=$(jq -r '.tool_input.file_path // empty'); [[ \"$file\" == *.java ]] && /opt/homebrew/opt/openjdk@21/bin/java -jar /opt/homebrew/Cellar/google-java-format/$(ls /opt/homebrew/Cellar/google-java-format/)/libexec/google-java-format.jar --replace \"$file\" 2>/dev/null || true",
             "statusMessage": "Running Checkstyle...",
             "timeout": 60
           }

@@ -6,9 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * [BackspacesInString]
- * Difficulty: [6 kyu]
- * URL: https://www.codewars.com/kata/5727bb0fe81185ae62000ae3/train/java
+ * [BackspacesInString] Difficulty: [6 kyu] URL:
+ * https://www.codewars.com/kata/5727bb0fe81185ae62000ae3/train/java
  *
  * <p>Description: [Brief description]
  */
@@ -37,9 +36,9 @@ public class BackspacesInString {
   /** Main method for manual testing. */
   public static void main(String[] args) {
     final BackspacesInString bis = new BackspacesInString();
-        assertEquals("abc", bis.cleanString("abc"));
+    assertEquals("abc", bis.cleanString("abc"));
     assertEquals("ac", bis.cleanString("abc#d##c"));
     assertEquals("", bis.cleanString("#########"));
-       assertEquals("", bis.cleanString("abc####d##c#"));
+            assertEquals("", bis.cleanString("abc####d##c#"));
   }
 }
