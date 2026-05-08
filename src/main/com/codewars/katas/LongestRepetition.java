@@ -14,18 +14,31 @@ public class LongestRepetition {
   public static Object[] longestRepetition(String s) {
     int currentCount = 1;
     int maxCount = 0;
+
+    if (s.isEmpty()) {
+      return new Object[] {"", 0};
+    }
+
     String currentChar = s.substring(0, 1);
     String maxChar = "";
 
     for (char c : s.substring(1).toCharArray()) {
       if (String.valueOf(c).equals(currentChar)) {
         currentCount = currentCount + 1;
-      } else if (currentCount >= maxCount) {
+      } else if (currentCount > maxCount) {
         maxCount = currentCount;
-        maxChar = String.valueOf(currentChar);
-        currentCount = 0;
+        maxChar = currentChar;
+        currentCount = 1;
+        currentChar = String.valueOf(c);
+      } else {
+        currentCount = 1;
         currentChar = String.valueOf(c);
       }
+    }
+
+    if (currentCount > maxCount) {
+      maxCount = currentCount;
+      maxChar = currentChar;
     }
 
     return new Object[] {maxChar, maxCount};
