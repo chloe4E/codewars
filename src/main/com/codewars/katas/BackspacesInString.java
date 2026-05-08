@@ -39,6 +39,6 @@ public class BackspacesInString {
     assertEquals("abc", bis.cleanString("abc"));
     assertEquals("ac", bis.cleanString("abc#d##c"));
     assertEquals("", bis.cleanString("#########"));
-            assertEquals("", bis.cleanString("abc####d##c#"));
+        assertEquals("", bis.cleanString("abc####d##c#"));
   }
 }
